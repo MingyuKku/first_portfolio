@@ -1,0 +1,325 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+li {list-style: none;}
+a {text-decoration: none; color: #555;}
+em {font-style: normal;}
+.clearfix::before, .clearfix::after {content: ""; display: block; clear: both;}
+html {scroll-behavior: smooth;}
+body {color: #555; overflow-x: hidden;}
+body.stick {overflow: hidden; touch-action: none;}
+body.not_scroll {overflow: hidden;}
+body::-webkit-scrollbar {width: 7px; height: 7px;}
+body::-webkit-scrollbar-thumb {border-radius: 7px; background: #333;}
+body::-webkit-scrollbar-track {background: #fff;}
+body::-webkit-scrollbar-thumb:hover {background: #555;}
+/* ::selection {} */
+
+
+/* 레이아웃 */
+#header {position: absolute; width: 100%; height: 200px; top: 0; z-index: 10; background: linear-gradient(to bottom, rgba(252,252,252,0.0), rgba(252,252,252,0.0), rgba(252,252,252,0.0)); transition: top 0.4s ease-in-out, background 0.4s ease-in-out;}
+.center {width: 1200px; margin: 0 auto;}
+#section1 {width: 100%; min-width: 1200px; overflow: hidden;}
+footer {height: 100vh; background: url(../style_images/rTissot/foot_bg.png) no-repeat; background-size: cover; background-attachment: fixed;}
+
+
+/* ============================================================== */
+/* header */
+.headline {width: 100%; height: 100px; border-bottom: 1px solid rgba(255, 255, 255, 0.5);}
+#header nav {display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100px;}
+#header nav>h1 {font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 19px; color: #DC1F18;}
+.gnb_menu>ul>li {display: inline-block; margin-right: 36px; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 17px;}
+.gnb_menu>ul>li:last-child {margin-right: 0;}
+.gnb_menu>ul>li>a {color: #fff; transition: color 0.8s ease-in-out;}
+.gnb_menu>ul>li:hover>a {color: #DC1F18;}
+
+.gnb_menu>ul>li:last-child {position: relative; padding: 37px 0;}
+.gnb_menu>ul>li:last-child>ul {position: absolute; top: 99px; left: 50%; transform: translateX(-50%); background: #555; padding: 16px 20px; border-radius: 4px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease-in-out;}
+.gnb_menu>ul>li:last-child>ul::before {content: ''; position: absolute; border: 8px solid #555; top: -8px; left: 50%; transform: translateX(-50%); border-top: 0; border-left-color: transparent; border-right-color: transparent;}
+.gnb_menu>ul>li:last-child>ul>li {white-space: nowrap; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 15px; line-height: 1.9;}
+.gnb_menu>ul>li:last-child>ul>li>a {color: #fff;}
+.gnb_menu>ul>li:last-child:hover>ul {opacity: 1; pointer-events: auto;}
+.gnb_menu>ul>li:last-child>ul a:hover {color: #DC1F18;}
+/* header 끝 */
+/* ============================================================== */
+
+
+
+/* ============================================================== */
+/* section1 */
+.main_visual {width: 100%; height: 100%;}
+.visual_slide_wrap {position: relative; width: 100%; height: 100%;}
+.visual_slider {position: relative; width: 100%; height: 100%;}
+.visual_slide {position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 4; overflow: hidden;}
+.visual_slide>img {display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 5.5s linear;}
+.mainVisual_bg {width: 100%;}
+
+/* .visual_slide.active {z-index: 5; width: 100%; transition: width 0.8s ease-in-out;} */
+
+.visual_txt_wrap {position: absolute; width: 1200px; height: 1px; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.visual_txt_top {position: absolute; bottom: 24px;}
+.visual_txt_top>h2 {width: 220px; margin-bottom: 10px; transform: translateX(60px); opacity: 0; transition: opacity 1s ease-in-out, transform 1s ease-in-out;}
+.visual_txt_top>h2>img {display: block; width: 100%;}
+.visual_txt_top>h4 {font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 42px; color: #6A67CE; transform: translateX(60px); opacity: 0; transition: opacity 1s ease-in-out, transform 1s ease-in-out;}
+.visual_txt_top>h3 {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 32px; color: #fff; transform: translateX(-60px); opacity: 0; transition: opacity 1s ease-in-out, transform 1s ease-in-out;}
+.visual_txt_top>p {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 19px; color: #fff; transform: translateX(-60px); opacity: 0; transition: opacity 1s ease-in-out, transform 1s ease-in-out;}
+
+.visual_txt_top>h2.active {transform: none; opacity: 1; transition-delay: 0.5s;}
+.visual_txt_top>h4.active {transform: none; opacity: 1; transition-delay: 0.55s;}
+.visual_txt_top>h3.active {transform: none; opacity: 1; transition-delay: 0.6s;}
+.visual_txt_top>p.active {transform: none; opacity: 1; transition-delay: 0.65s;}
+
+
+.visual_txt_bottom {position: absolute; top: 24px;}
+.visual_txt_bottom>p {font-family: 'GmarketSansLight'; font-size: 16px; color: #fff; line-height: 1.6; transform: translateX(60px); opacity: 0; transition: opacity 1s ease-in-out, transform 1s ease-in-out;}
+.visual_txt_bottom>span {display: block; width: fit-content; font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 17px; padding: 10px 32px 12px 32px; background: #DC1F18; border-radius: 30px; margin-top: 32px; cursor: pointer; transform: translateX(-60px); opacity: 0; transition: box-shadow 0.4s ease-in-out, opacity 1s ease-in-out, transform 1s ease-in-out;}
+.visual_txt_bottom>span>a {color: #fff;}
+/* .visual_txt_bottom>span:hover {box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);} */
+
+.visual_txt_bottom>p.active {transform: none; opacity: 1; transition-delay: 0.7s;}
+.visual_txt_bottom>span.active {transform: none; opacity: 1; transition-delay: 0.75s;}
+
+
+.control_line {position: absolute; width: 84%; height: 1px; background: rgba(255, 255, 255, 0.5); top: 50%; left: 50%; transform: translate(-50%, -50%); user-select: none; z-index: 6;}
+.visual_prev {position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.2); border-radius: 50%; left: -50px; cursor: pointer; z-index: 7; transition: background 0.4s ease-in-out, color 0.4s ease-in-out; color: #ddd;}
+.visual_prev>i {font-size: 32px;}
+.visual_next {position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.2); border-radius: 50%; right: -50px; cursor: pointer; z-index: 7; transition: background 0.4s ease-in-out, color 0.4s ease-in-out; color: #ddd;}
+.visual_next>i {font-size: 32px;}
+.visual_prev:hover {background: rgba(255, 255, 255, 0.6); color: #555;}
+.visual_next:hover {background: rgba(255, 255, 255, 0.6); color: #555;}
+
+
+.visual_pageMove {position: absolute; left: 50%; bottom: 80px; transform: translateX(-50%); z-index: 6;}
+.visual_pageMove>li {display: inline-block; width: 12px; height: 12px; background: #fff; border-radius: 50%; margin-right: 16px; position: relative; cursor: pointer; transition: background 0.8s ease-in-out;}
+.visual_pageMove>li::after {position: absolute; display: block; content: ''; width: 32px; height: 32px; background: rgba(255, 255, 255, 0.3); top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); border-radius: 50%; transition: transform 0.8s ease-in-out;}
+.visual_pageMove>li:last-child {margin-right: 0;}
+.visual_pageMove>li.active {background: #DC1F18;}
+.visual_pageMove>li.active:after {transform: translate(-50%, -50%) scale(1);}
+
+.making_info {position: absolute; bottom: 120px; width: 1200px; left: 50%; transform: translateX(-50%); z-index: 6;}
+.making_info>h3 {font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 14px; color: #999; line-height: 2;}
+.making_info>h3>span {color: #fff; margin-left: 10px; transition: color 0.8s ease-in-out;}
+/* section1 끝*/
+/* ============================================================== */
+
+
+
+
+/* ============================================================== */
+/* section2 끝*/
+.overview_wrap {padding: 120px 0 200px 0; background: url(../style_images/rTissot/section2_bg.png) no-repeat; background-size: cover; background-attachment: fixed;}
+.overview_tit {display: flex; align-items: center;}
+.overview_tit>h2 {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 32px; color: #DC1F18;}
+.overview_tit>span {display: block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 12px;}
+.overview_tit>em {display: block; width: 896px; height: 1px; background: #ddd;}
+.overview_tit_wrap>p {font-family: 'GmarketSansLight'; font-weight: normal; font-size: 15px; line-height: 1.6; color: #fff;}
+.overview_tit_wrap>p:nth-child(2) {margin: 32px 0 16px 0;}
+
+.overview_wrap ul {display: flex; align-items: center; margin-top: 120px;}
+.overview_wrap ul>li {margin-right: 12px;}
+.overview_wrap ul>li:last-child {margin-right: 0;}
+.overview_wrap ul>li.cycle {width: 350px; height: 350px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.8); position: relative; cursor: pointer;}
+.overview_wrap ul>li.cycle>h3 {position: absolute; top: 75px; left: 50%; transform: translateX(-50%); font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 32px; color: #fff;}
+.overview_wrap ul>li.cycle>p {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'GmarketSansLight'; font-weight: normal; font-size: 16px; color: #fff; text-align: center; white-space: nowrap; line-height: 1.7;}
+
+/* 시계침효과 */
+.overview_wrap ul>li.cycle>span {position: absolute; left: 50%; transform: translateX(-50%); width: 1px; height: 24px; background: rgba(255,255,255,0.7);}
+.overview_wrap ul>li.cycle>span:nth-child(4) {top: 0;}
+.overview_wrap ul>li.cycle>span:nth-child(5) {bottom: 0;}
+.overview_wrap ul>li.cycle>div {position: absolute; width: 100%; height: 100%; border-radius: 50%; transition: transform 1s ease-in-out, opacity 0.6s ease-in-out; opacity: 0;}
+.overview_wrap ul>li.cycle>div>span {position: absolute; left: 50%; transform: translateX(-50%); width: 1px; height: 24px; background: rgba(252,252,252,0.7);}
+.overview_wrap ul>li.cycle>div>span:nth-child(1) {top: 0;}
+.overview_wrap ul>li.cycle>div>span:nth-child(2) {bottom: 0;}
+.overview_wrap ul>li.cycle:hover>div {transform: rotate(270deg); opacity: 1;}
+
+.overview_img_wrap {position: relative;}
+.overview_img_bg {width: 100%; height: 670px; background: #F6F6F6; position: absolute; top: 0; z-index: -1;}
+.overview_img_wrap .center {padding: 100px 0 120px 0;}
+.overview_img_wrap .center>h2 {font-family: 'GmarketSansMedium'; font-weight: normal; font-size: 19px; color: #555; text-align: center; line-height: 1.8;}
+.overview_img_wrap .center>img {display: block; width: 100%; margin-top: 70px;}
+/* section2 끝*/
+/* ============================================================== */
+
+
+
+/* ============================================================== */
+/* section3 끝*/
+.system_wrap {padding: 120px 0 300px 0; background: url(../style_images/rTissot/design_system_bg.png) no-repeat; background-size: cover;}
+.system_tit {display: flex; align-items: center;}
+.system_tit>h2 {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 32px; color: #DC1F18;}
+.system_tit>span {display: block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 12px;}
+.system_tit>em {display: block; width: 925px; height: 1px; background: #ddd;}
+.system_tit_wrap>p {font-family: 'GmarketSansMedium'; font-weight: normal; font-size: 15px; line-height: 1.6; color: #555;}
+.system_tit_wrap>p:nth-child(2) {margin: 32px 0 16px 0;}
+
+.color_system {margin: 60px 0;}
+.color_system>h3 {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 24px;}
+.color_system>ul {display: flex; margin-top: 24px;}
+.color_system>ul>li {width: 110px; height: 110px; border-radius: 50%; margin-right: 48px; display: flex; align-items: center; justify-content: center;box-shadow: 4px 10px 15px rgba(0, 0, 0, 0.15); transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; cursor: pointer;}
+.color_system>ul>li:last-child {margin-right: 0;}
+.color_system>ul>li>span {font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 15px;}
+.color_system>ul>li:nth-child(1) {background: #dc1f18; color: #fff;}
+.color_system>ul>li:nth-child(2) {background: #303030; color: #fff;}
+.color_system>ul>li:nth-child(3) {background: #f6f6f6; color: #555}
+.color_system>ul>li:nth-child(4) {background: #ffffff; color: #555}
+.color_system>ul>li:hover {box-shadow: 4px 20px 30px rgba(0, 0, 0, 0.18); transform: translateY(-8px);}
+
+.typography_system>h3 {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 24px;}
+.typography_system>ul {display: flex; color: #333; margin-top: 24px;}
+.typography_system>ul>li {margin-right: 24px;}
+.typography_system>ul>li:last-child {margin-right: 0;}
+
+.typography_system>ul>li:nth-child(1)>ul>li {font-family: 'Noto Sans KR', sans-serif; font-size: 18px; line-height: 1.6;}
+.typography_system>ul>li:nth-child(1)>ul>li:nth-child(1) {font-weight: 700;}
+.typography_system>ul>li:nth-child(1)>ul>li:nth-child(2) {font-weight: 500;}
+.typography_system>ul>li:nth-child(1)>ul>li:nth-child(3) {font-weight: 400;}
+.typography_system>ul>li:nth-child(1)>ul>li:nth-child(4) {font-weight: 300;}
+
+.typography_system>ul>li:nth-child(2)>ul>li {font-size: 18px; font-weight: normal; line-height: 1.6;}
+.typography_system>ul>li:nth-child(2)>ul>li:nth-child(1) {font-family: 'SpoqaHanSansNeo-Bold';}
+.typography_system>ul>li:nth-child(2)>ul>li:nth-child(2) {font-family: 'SpoqaHanSansNeo-Medium';}
+.typography_system>ul>li:nth-child(2)>ul>li:nth-child(3) {font-family: 'SpoqaHanSansNeo-Regular';}
+.typography_system>ul>li:nth-child(2)>ul>li:nth-child(4) {font-family: 'SpoqaHanSansNeo-Light';}
+
+.typography_system>ul>li:nth-child(3)>ul>li {font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 1.6;}
+.typography_system>ul>li:nth-child(3)>ul>li:nth-child(1) {font-weight: 600;}
+.typography_system>ul>li:nth-child(3)>ul>li:nth-child(2) {font-weight: 500;}
+.typography_system>ul>li:nth-child(3)>ul>li:nth-child(3) {font-weight: 400;}
+.typography_system>ul>li:nth-child(3)>ul>li:nth-child(4) {font-weight: 300;}
+/* section3 끝*/
+/* ============================================================== */
+
+
+/* ============================================================== */
+/* section4 끝*/
+#section4 {padding-bottom: 2200px; position: relative;}
+.output_wrap {padding: 120px 0 650px 0; background: url(../style_images/rTissot/output_bg.png) no-repeat; background-size: cover;}
+.output_tit {display: flex; align-items: center;}
+.output_tit>h2 {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 32px; color: #fff;}
+.output_tit>span {display: block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 12px;}
+.output_tit>em {display: block; width: 450px; height: 1px; background: #ddd;}
+.output_tit_wrap>p {font-family: 'GmarketSansLight'; font-weight: normal; font-size: 15px; line-height: 1.7; color: #fff; text-align: center; margin-top: 50px;}
+
+.desktopUiKit_wrap {margin-top: 290px; position: relative;}
+.desktopUiKit1_img {position: absolute; right: 0; top: 156px; box-shadow: 0 6px 40px rgba(0, 0, 0, 0.14); z-index: 1;}
+.desktopUiKit1_text1 {position: absolute; right: 10px; font-family: 'GmarketSansLight'; font-weight: normal; font-size: 17px; color: #fff; text-align: center; z-index: 2;}
+.desktopUiKit1_text1>p {margin-bottom: 16px;}
+.desktopUiKit1_text2 {position: absolute; display: flex; align-items: center; left: 0; font-family: 'GmarketSansLight'; font-weight: normal; font-size: 17px; color: #fff; z-index: 2; top: 145px;}
+.desktopUiKit1_text2>p {margin-right: 20px;}
+.desktopUiKit1_text3 {position: absolute; display: flex; align-items: center; left: 0; font-family: 'GmarketSansMedium'; font-weight: normal; font-size: 17px; color: #555; z-index: 2; top: 1000px;}
+.desktopUiKit1_text3>p {margin-right: 20px;}
+.desktopUiKit1_text3>img {opacity: 0.6;}
+
+.desktopUiKit2_img {position: absolute; left: 0; top: 1350px; box-shadow: 0 6px 40px rgba(0, 0, 0, 0.14); z-index: 2;}
+.desktopUiKit2_text1 {position: absolute; left: 0; font-family: 'GmarketSansMedium'; font-weight: normal; font-size: 17px; color: #555; z-index: 3; top: 1180px;}
+.desktopUiKit2_text1>p {margin-bottom: 16px;}
+.desktopUiKit2_text1>img {display: block; margin-left: 125px; opacity: 0.6;}
+.desktopUiKit2_text2 {position: absolute; display: flex; align-items: flex-end; right: 0; font-family: 'GmarketSansMedium'; font-weight: normal; font-size: 17px; color: #555; z-index: 3; top: 1694px;}
+.desktopUiKit2_text2>p {margin-left: 20px; text-align: right;}
+.desktopUiKit2_text2>img {opacity: 0.6;}
+
+.desktopUiKit3_img {position: absolute; right: 0; top: 2250px; box-shadow: 0 6px 40px rgba(0, 0, 0, 0.14); z-index: 3;}
+.desktopUiKit3_text1 {position: absolute; right: 170px; font-family: 'GmarketSansMedium'; font-weight: normal; font-size: 17px; color: #555; z-index: 4; top: 2165px;}
+.desktopUiKit3_text1>p {margin-bottom: 16px; margin-left: -90px;}
+.desktopUiKit3_text1>img {opacity: 0.6;}
+
+.output_sub_bg {width: 100%; height: 100vh; background: url(../style_images/rTissot/outputSb_bg.png) no-repeat; background-size: cover; background-attachment: fixed;}
+
+.output_cycle1 {position: absolute; width: 1000px; height: 1000px; top: 2600px; left: -440px; animation: moveCycle 30s linear; animation-iteration-count: infinite;}
+.output_cycle1>div:nth-child(1) {position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 1px solid rgba(221, 221, 221, 0.8); animation: cycleScale 5s linear forwards; animation-iteration-count: infinite; animation-delay: 1s;}
+.output_cycle1>div:nth-child(2) {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 60%; height: 60%; border-radius: 50%; border: 1px solid rgba(221, 221, 221, 0.8); animation: cycleScale2 8s linear forwards; animation-iteration-count: infinite;}
+.output_cycle1>div:nth-child(3) {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 25%; height: 25%; border-radius: 50%; border: 1px solid rgba(221, 221, 221, 0.8); animation: cycleScale3 6s linear forwards; animation-iteration-count: infinite; animation-delay: 0.5s;}
+
+.output_cycle2 {position: absolute; width: 1000px; height: 1000px; top: 3600px; right: -440px; animation: moveCycle 30s linear; animation-iteration-count: infinite;}
+.output_cycle2>div:nth-child(1) {position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 1px solid rgba(221, 221, 221, 0.8); animation: cycleScale 5s linear forwards; animation-iteration-count: infinite; animation-delay: 1s;}
+.output_cycle2>div:nth-child(2) {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 60%; height: 60%; border-radius: 50%; border: 1px solid rgba(221, 221, 221, 0.8); animation: cycleScale2 8s linear forwards; animation-iteration-count: infinite;}
+.output_cycle2>div:nth-child(3) {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 25%; height: 25%; border-radius: 50%; border: 1px solid rgba(221, 221, 221, 0.8); animation: cycleScale3 6s linear forwards; animation-iteration-count: infinite; animation-delay: 0.5s;}
+/* section4 끝*/
+/* ============================================================== */
+
+
+
+/* ============================================================== */
+/* section5 끝*/
+.video_wrap {padding: 80px 0 0 0; position: relative;}
+.video_wrap h2 {font-family: 'GmarketSansMedium'; font-weight: normal; font-size: 17px; color: #555; text-align: center; margin-bottom: 70px;}
+.video {position: relative;}
+.video>video {width: 92%; position: absolute; top: 36px; left: 50%; transform: translateX(-50%);}
+.video>img {width: 100%; display: block;}
+.video_bg {position: absolute; width: 100%; height: 580px; z-index: -1; background: #f6f6f6; bottom: 0;}
+/* section5 끝*/
+/* ============================================================== */
+
+
+
+
+/* ============================================================== */
+/* footer*/
+footer {position: relative;}
+.foot_txt {text-align: center; color: #fff; padding-top: 160px;}
+.foot_txt>h2 {font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 32px; margin-bottom: 36px;}
+.foot_txt>h2>span {font-family: 'S-CoreDream-6Bold'; font-weight: normal; font-size: 32px;}
+.foot_txt>p {font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 17px; margin-bottom: 10px;}
+
+.foot_cont {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 763px; height: 426px; display: flex; flex-wrap: wrap; justify-content: center; align-content: center;}
+.foot_cont>p {display: flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 19px; background: rgba(220, 31, 24, 0.6); width: 270px; height: 110px; text-align: center; margin-right: 30px; margin-bottom: 30px;}
+.foot_cont>p:nth-child(2n) {margin-right: 0;}
+.foot_cont>p:nth-child(3), .foot_cont>p:nth-child(4) {margin-bottom: 0;}
+.foot_cont>p>a {color: #fff;}
+
+.foot_cont>span {position: absolute; display: block;}
+.foot_cont>span:nth-child(5) {height: 1px; width: 166px; background: #fff; top: 0; left: 0;}
+.foot_cont>span:nth-child(6) {height: 1px; width: 166px; background: #fff; top: 0; right: 0;}
+.foot_cont>span:nth-child(7) {height: 100%; width: 1px; background: #fff; top: 0; left: 0;}
+.foot_cont>span:nth-child(8) {height: 100%; width: 1px; background: #fff; top: 0; right: 0;}
+.foot_cont>span:nth-child(9) {height: 1px; width: 100%; background: #fff; bottom: 0; left: 0;}
+/* footer 끝*/
+/* ============================================================== */
+
+
+/* 애니메이션 */
+
+/* section1 */
+@keyframes rotateUp {from {transform: translateY(60px) rotate(7deg); opacity: 0;} to {transform: none; opacity: 1;}}
+
+/* section4 */
+@keyframes moveCycle {from {transform: translate(0,0);} 30% {transform: translate(80px,150px);} 70%{transform: translate(50px,180px);} to {transform: translate(0,0);}}
+@keyframes cycleScale {from {opacity: 0; width: 100%; height: 100%;} 20% {opacity: 1;} 80% {opacity: 1;} to {opacity: 0; width: 130%; height: 130%;}}
+@keyframes cycleScale2 {from {opacity: 0; width: 60%; height: 60%;} 20% {opacity: 1;} 80% {opacity: 1;} to {opacity: 0; width: 90%; height: 90%;}}
+@keyframes cycleScale3 {from {opacity: 0; width: 10%; height: 10%;} 20% {opacity: 1;} 80% {opacity: 1;} to {opacity: 0; width: 50%; height: 50%;}}
+
+
+
+/* 패럴렉스 */
+.overview_wrap ul>li.cycle:nth-child(1) {opacity: 0; transform: translateX(120%); transition: transform 1s ease-in-out, opacity 1s ease-in-out;}
+.overview_wrap ul>li.cycle:nth-child(3) {opacity: 0; transition: opacity 1s ease-in-out;}
+.overview_wrap ul>li.cycle:nth-child(5) {opacity: 0; transform: translateX(-120%); transition: transform 1s ease-in-out, opacity 1s ease-in-out;}
+.overview_wrap.scroll ul>li.cycle {transform: none; opacity: 1;}
+
+.overview_img_wrap .center>h2 {opacity: 0; transform: translateY(100px); transition: transform 1.2s ease-out, opacity 1.2s ease-out;}
+.overview_img_wrap .center>img {opacity: 0; transform: translateY(100px); transition: transform 1.2s ease-out, opacity 1.2s ease-out; transition-delay: 0.3s;}
+.overview_img_wrap.scroll .center>h2 {transform: none; opacity: 1;}
+.overview_img_wrap.scroll .center>img {transform: none; opacity: 1;}
+
+
+.desktopUiKit1_img {transform: translateY(150px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out;}
+.desktopUiKit1_text1 {transform: translateY(100px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out; transition-delay: 0.3s;}
+.desktopUiKit1_text2 {transform: translateX(100px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out; transition-delay: 0.4s;}
+.desktopUiKit1_text3 {transform: translateX(100px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out;}
+
+.desktopUiKit1_img.scroll {transform: none; opacity: 1;}
+.desktopUiKit1_text1.scroll {transform: none; opacity: 1;}
+.desktopUiKit1_text2.scroll {transform: none; opacity: 1;}
+.desktopUiKit1_text3.scroll {transform: none; opacity: 1;}
+
+.desktopUiKit2_img {transform: translateY(150px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out;}
+.desktopUiKit2_text1 {transform: translateY(100px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out; transition-delay: 0.7s;}
+.desktopUiKit2_text2 {transform: translateX(-100px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out;}
+
+.desktopUiKit2_img.scroll {transform: none; opacity: 1;}
+.desktopUiKit2_text1.scroll {transform: none; opacity: 1;}
+.desktopUiKit2_text2.scroll {transform: none; opacity: 1;}
+
+.desktopUiKit3_img {transform: translateY(150px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out;}
+.desktopUiKit3_text1 {transform: translateY(100px); opacity: 0; transition: transform 1s ease-out, opacity 1s ease-out; transition-delay: 0.5s;}
+
+.desktopUiKit3_img.scroll {transform: none; opacity: 1;}
+.desktopUiKit3_text1.scroll {transform: none; opacity: 1;}

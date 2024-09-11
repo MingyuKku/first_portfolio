@@ -1,0 +1,30 @@
+/* section2 */
+.goal_tit>em {width: 0; transition: width 1.6s ease-out;}
+.goal_wrap.scroll .goal_tit>em {width: 969px;}
+
+/* section3 */
+.figma_wrap {display: flex; flex-wrap: wrap; width: 140px; padding: 110px 0 455px 0; float: right;}
+.figma_wrap>span {display: block;}
+.figma_wrap>span:nth-child(1) {opacity: 0; transform: translate(-1400%, 800%); transition: transform 1.5s ease-out, opacity 1.5s ease-out;}
+.figma_wrap>span:nth-child(2) {opacity: 0; transform: translate(-200%, 600%); transition: transform 1.5s ease-out, opacity 1.5s ease-out;}
+.figma_wrap>span:nth-child(3) {opacity: 0; transform: translate(-1400%, 100%); transition: transform 1.5s ease-out, opacity 1.5s ease-out;}
+.figma_wrap>span:nth-child(4) {opacity: 0; transform: translate(-1400%, -700%); transition: transform 1.5s ease-out, opacity 1.5s ease-out;}
+.figma_wrap>span:nth-child(5) {opacity: 0; transform: translate(-100%, -700%); transition: transform 1.5s ease-out, opacity 1.5s ease-out;}
+.figma_wrap.scroll>span {transform: none; opacity: 1;}
+
+
+/* section4 */
+.output_kit_standard>img:first-child {transform: translateY(100%); transition: transform 1s ease-in-out;}
+.output_kit_standard>img:nth-child(2) {transform: translateX(85%); opacity: 0; transition: transform 1s, opacity 1s ease-in-out;}
+.output_kit_standard>img:nth-child(3) {transform: translateX(-85%); opacity: 0; transition: transform 1s, opacity 1s ease-in-out;}
+.output_kit_standard.scroll>img:first-child {transform: none; opacity: 1;}
+
+
+/* section6 */
+.manual_start {transform: translateX(-40%); opacity: 0; transition: transform 1s ease-in-out, opacity 1s ease-in-out;}
+.manual_middle {transform: translateX(-40%); opacity: 0; transition: transform 1s ease-in-out, opacity 1s ease-in-out;}
+.manual_end {transform: translateX(-40%); opacity: 0; transition: transform 1s ease-in-out, opacity 1s ease-in-out;}
+
+.manual.scroll .manual_start {transform: none; opacity: 1;}
+.manual.scroll .manual_middle {transform: none; opacity: 1; transition-delay: 0.3s;}
+.manual.scroll .manual_end {transform: none; opacity: 1; transition-delay: 0.6s;}
